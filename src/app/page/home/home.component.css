@@ -1,0 +1,52 @@
+.banner{
+    background-image: url('../../../assets/image/bannerimg.jpeg');
+    height: 600px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+.content{
+    position: relative;
+    left:8%;
+    top:30%;
+}
+.content h1{
+    color:aliceblue;
+    font-size: 70px;
+    font-weight: bold;
+    
+}
+.content a{
+    text-decoration: none;
+    background-color: aliceblue;
+    color: var(--primary-color);
+    padding: 10px 20px;
+}
+.content a:hover{
+    background-color: var(--primary-color);
+    color:aliceblue
+}
+.stepBox{
+    background-color: black;
+    padding: 10px 10px;
+    text-align: center;
+}
+.stepBox h1{
+    color: var(--primary-color);
+    font-size: 50px;
+    font-weight: bold;
+}
+.stepBox p{
+    color: aliceblue;
+    font-size: 20px;
+    font-style: italic;
+}
+.text-center{
+    color: var(--primary-color);
+    
+}
+@media screen and (max-width:700px){
+    .banner{
+        height: 700px;
+    }
+}

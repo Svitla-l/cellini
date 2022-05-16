@@ -1,0 +1,26 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-6" *ngIf="menuData" >
+            <a routerLink="../../menu" class="btn btn-sm btn-dark mb-3">Назад</a>
+            <img src="{{menuData[0].foodImg}}" width="100%"/>
+            <h1 class="mt-3">{{menuData[0].foodName}}</h1>
+            <p>Склад: {{menuData[0].foodDetails}}</p>
+            <p>{{menuData[0].foodWeight}}</p>
+            <p>{{menuData[0].foodPrice}}</p>
+        </div>
+    <div class="col-lg-6 mt-5 mb-5">
+        <h1>Оформлення замовлення</h1>
+        <form>
+            <input type="text" class="form-control" placeholder="Прізвище">
+            <input type="text" class="form-control" placeholder="Імʼя">
+            <input type="text" class="form-control" placeholder="Номер телефону">
+            <input type="text" class="form-control" placeholder="Місто">
+            <input type="text" class="form-control" placeholder="Вулиця">
+            <input type="text" class="form-control" placeholder="Введіть номер дому, квартиру">
+            <textarea class="form-control" placeholder="Коментар"></textarea>
+            <button routerLink="../../home" (click)="storeName()" class="btn btn-md btn-dark mt-3">Замовити!</button>  
+            <button routerLink="../../menu" (click)="SpecificDelete()" class="btn btn-md btn-dark mt-3">Видалити</button>
+        </form>
+    </div>
+    </div>
+</div>
