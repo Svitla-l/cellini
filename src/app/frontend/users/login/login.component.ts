@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       
     }else{
     this.errmsgshow = true;
-    this.errmsg = 'Заповніть будь-ласка всі поля!';
+    this.errmsg = 'Заповніть  будь-ласка всі поля!';
   }
  }
 }
