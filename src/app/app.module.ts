@@ -17,6 +17,7 @@ import { FrontendComponent } from './frontend/frontend.component';
 import { UsersComponent } from './frontend/users/users.component';
 import { SignupComponent } from './frontend/users/signup/signup.component'
 import { LoginComponent } from './frontend/users/login/login.component';
+import { AdminComponent } from './frontend/users/admin/admin.component';
 
 
 const appRoutes: Routes =[
@@ -36,7 +37,8 @@ const appRoutes: Routes =[
     FrontendComponent,
     UsersComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +46,7 @@ const appRoutes: Routes =[
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-  
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
