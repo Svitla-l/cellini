@@ -7,6 +7,10 @@ import { BasketComponent } from './page/basket/basket.component';
 import { MenuComponent } from './page/menu/menu.component';
 import { LoginComponent } from './frontend/users/login/login.component';
 import { SignupComponent } from './frontend/users/signup/signup.component';
+import { AdminEtryComponent } from './frontend/users/login/admin-etry/admin-etry.component';
+import { RememberEmailComponent } from './frontend/users/login/remember-email/remember-email.component';
+import { BasketNullComponent } from './page/basket/basket-null/basket-null.component';
+
 
 
 const routes: Routes = [
@@ -16,7 +20,12 @@ const routes: Routes = [
   {path:'basket/:id',component:BasketComponent},
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent}
+  {path:'admin',component:AdminEtryComponent},
+  {path:'signup',component:SignupComponent},
+  {path:'send',component:RememberEmailComponent},
+  {path:'basket',component:BasketNullComponent},
+  
+
 ]
 @NgModule({
   declarations: [],

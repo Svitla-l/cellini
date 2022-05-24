@@ -1,74 +1,149 @@
-const express = require("express");
-const bodyparser = require("body-parser");
-const cors = require("cors");
-
-const app = express();
-
-const db = require("./dbconnection");
-
-// database connection
-db.connect((err) => {
-  err
-    ? console.log("db connection failed ...")
-    : console.log("db connection success ..");
-});
-//cors
-app.use(cors());
-
-// router path
-const routes = require("./router/router");
-
-// bodyparser
-app.use(bodyparser.json());
-
-app.use("/api", routes);
-
-// server
-app.listen(3000, (err) => {
-  if (err) throw err;
-  console.log("server running....");
-});
-
-
-// const express = require('express');
-// const mongoose = require('mongoose');
+// require('dotenv').config();
+// const express = require("express");
+// const bodyparser = require("body-parser");
 // const cors = require("cors");
-// const { createServer } = require('http');
 // const app = express();
-// const port = 3000;
+// const mongoose = require('mongoose');
+// const userModel = require('./model/users')
+// const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken")
 
 
-// mongoose.connect('mongodb+srv://admin:1111@cluster0.4agm4.mongodb.net/cellini?retryWrites=true&w=majority', {
-//     useNewUrlParser: true,
+// app.use(cors());
+// app.use(bodyparser.json());
+
+// // connect database
+// mongoose.connect(process.env.mongodburl, {
+//     useNewUrlParser: true
 //   })
 //   .then(() => console.log('MongoDb connected'))
 //   .catch(err => console.log(err));
-//   app.use(cors());
-//   const routes = require('./router')
-// const UsersSchema = new mongoose.Schema({
-//   name: {
-//     type: String,
-//     required: true,
-//   },
-//   email: {
-//     type: String,
-//     required: true,
-//   },
-// });
 
-// const Users = mongoose.model('Users', UsersSchema);
-// app.use("/api", routes)
-// app.get('/', (req, res) => {
-//   Users.create({
-//     name: 'Denis',
-//     email: 'test@test.com',
+// //router path
+// const routes = require("./router/router");
+// //const controllers = require("./controller/controller")
+// app.use("/api", routes);
+
+
+
+
+// app.post('/api', async (req,res)=>{
+//   console.log(req.body,'postdata');
+
+//   const chkdataexit = await userModel.findOne({$or:[{uemail:req.body.email},{upassword:req.body.password}] })
+// if(chkdataexit){
+//   if(chkdataexit.uemail===req.body.email)
+//     res.send({
+//       msg:"Така електнонна пошта вже зареєстрована"
+// })
+//   }else{
+//     const data = new userModel({
+//       uname:req.body.name,
+//       uemail:req.body.email,
+//       upassword:req.body.password
+//     }
+// );
+//     data.save((err,result)=>{
+//       if(err){
+//         console.log('create db failed',err);
+//       }else{
+//         res.send({
+//           msg:'data created',
+//           data:result 
+//       });
+//     }
 //   })
-//     .then(user => res.send(user))
-//     .catch(err => res.send(err));
-//   // Users.find()
-//   //   .then(users => res.send(users))
-//   //   .catch(err => res.send(err));
+// }
+// })
+
+// app.get('/api', async (req,res)=>{
+//   console.log('getdata');
+//   const data =await userModel.find();
+
+//   if(data){
+//     res.send({
+//       msg:"all user data",
+//             result:data
+//         });
+//   }else{
+//     res.send({
+//       msg:"No data"
+//   });
+//   }
+// })
+
+// app.get('/:id',async (req,res)=>{
+//   console.log(req.param.id,'ids');
+//   if(req.params.id){
+//     const chkid = mongoose.isValidObjectId(req.params.id);
+//         if(chkid===true){
+//             const iddata = await userModel.findById({_id:req.params.id});
+//             if(iddata==null){
+//                 res.send({
+//                     msg:'single data not data',
+//                     result:iddata
+//                 })
+//             }
+//             else{
+//                 res.send({
+//                     msg:"single data ",
+//                     result:iddata
+//                 });
+//               }} else{
+//                   res.send({
+//                       msg:"invalid user id"
+//                   })
+//               }
+//   }
+// })
+// app.delete('/:id',async (req,res)=>{
+   
+//   console.log('remove data',req.params.id);
+  
+//   const chkvalidid = mongoose.isValidObjectId(req.params.id);
+//   if(chkvalidid==true)
+//   {
+//       const iddata = await userModel.remove({_id:req.params.id});
+//       if(iddata==null)
+//       {
+//           res.send({
+//               msg:"data not found"
+//           });
+//       }
+//       else
+//       {
+//           res.send({
+//               msg:"data remove"
+//           });
+//       }
+//   }else
+//   {
+//       res.send({
+//           msg:"invalid id please enter valid id"
+//       });
+//   }
+
+
+// });app.put('/:id',async (req,res)=>{
+//   console.log(req.params.id)
+//   const updatedata = await userModel.updateOne({_id:req.params.id},{$set:{uemail:req.body.email}});
+  
+//   if(updatedata)
+//   {
+//       res.send({ 
+//           msg:"data updated"
+//       });
+//   }
+
 // });
 
-// const server = createServer(app);
-// server.listen(port, () => console.log(`server is up. port: ${port}`));
+
+
+// //listen server
+// const PORT = process.env.PORT | 3000;
+// app.listen(PORT, ()=>{
+//   console.log(`server running ... ${PORT}`)
+// })
+
+
+

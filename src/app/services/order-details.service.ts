@@ -3,12 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class OrderDetailsService {
-
-  constructor() { }
-  // fooddetails 
-  
-  foodDetails = [
+export  class OrderDetailsService {
+ foodDetails = [
     {
       id:1,
       foodName:"Салат Неаполі ",

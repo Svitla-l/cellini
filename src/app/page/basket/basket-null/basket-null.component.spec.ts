@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UsersComponent } from './users.component';
 
-describe('UsersComponent', () => {
-  let component: UsersComponent;
-  let fixture: ComponentFixture<UsersComponent>;
+import { BasketNullComponent } from './basket-null.component';
+
+describe('BasketNullComponent', () => {
+  let component: BasketNullComponent;
+  let fixture: ComponentFixture<BasketNullComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsersComponent ]
+      declarations: [ BasketNullComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UsersComponent);
+    fixture = TestBed.createComponent(BasketNullComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

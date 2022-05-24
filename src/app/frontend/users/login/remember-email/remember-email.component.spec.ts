@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UsersComponent } from './users.component';
 
-describe('UsersComponent', () => {
-  let component: UsersComponent;
-  let fixture: ComponentFixture<UsersComponent>;
+import { RememberEmailComponent } from './remember-email.component';
+
+describe('RememberEmailComponent', () => {
+  let component: RememberEmailComponent;
+  let fixture: ComponentFixture<RememberEmailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsersComponent ]
+      declarations: [ RememberEmailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UsersComponent);
+    fixture = TestBed.createComponent(RememberEmailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

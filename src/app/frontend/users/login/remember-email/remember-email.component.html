@@ -1,0 +1,16 @@
+<form>
+<div class="mb-3">
+    <input #email class="form-control" placeholder="Введіть пароль ваш email" required />
+  </div>
+  <button (click)="onSent(email.value)" class="btn btn-outline-success me-md-2">Надіслати</button>
+  
+  <button (click)="onBack()" class="btn btn-outline-success me-md-2">Назад</button>
+</form>
+  <div *ngIf="notEmail">
+  <p class="text-danger"></p>
+  </div>
+  <span *ngIf="okEmail">
+    <p class="text-danger"> Письмо з інструкцією надіслано на пошту </p>
+  </span>
+
+

@@ -17,7 +17,10 @@ import { FrontendComponent } from './frontend/frontend.component';
 import { UsersComponent } from './frontend/users/users.component';
 import { SignupComponent } from './frontend/users/signup/signup.component'
 import { LoginComponent } from './frontend/users/login/login.component';
-import { AdminComponent } from './frontend/users/admin/admin.component';
+import { AdminEtryComponent } from './frontend/users/login/admin-etry/admin-etry.component';
+import { BasketNullComponent } from './page/basket/basket-null/basket-null.component';
+
+
 
 
 const appRoutes: Routes =[
@@ -38,7 +41,9 @@ const appRoutes: Routes =[
     UsersComponent,
     SignupComponent,
     LoginComponent,
-    AdminComponent
+    AdminEtryComponent,
+    BasketNullComponent
+ 
   ],
   imports: [
     BrowserModule,
